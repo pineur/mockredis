@@ -1567,7 +1567,7 @@ def mock_redis_client(**kwargs):
     can return a MockRedis object
     instead of a Redis object.
     """
-    return MockRedis()
+    return MockRedis(**kwargs)
 
 mock_redis_client.from_url = mock_redis_client
 
@@ -1578,6 +1578,6 @@ def mock_strict_redis_client(**kwargs):
     can return a MockRedis object
     instead of a StrictRedis object.
     """
-    return MockRedis(strict=True)
+    return MockRedis(strict=True, **kwargs)
 
 mock_strict_redis_client.from_url = mock_strict_redis_client
